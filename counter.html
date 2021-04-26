@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Home-myphisics</title>
+	     <!-- Bootstrap CSS -->
+	     <link rel="stylesheet" href="css/bootstrap.min.css" >
+	    <!-- JS Script -->
+	     <script src="js/jquery-3.6.0.min.js"></script>
+	     <!-- css -->
+	     <link rel="stylesheet" type="text/css" href="css/counter.css">
+	     <style>
+	     	.cir{width: 200px;height: 200px;border-radius: 50%;position: relative;}
+	     	.sub{background-color: #BC1608;}
+	     	.like{background-color: #1FB100;}
+	     	.view{background-color: #F9B900;}
+	     	.small_cir{width: 142px;height: 142px;border-radius: 50%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);background-color: #fff;}
+	     	.small_cir img{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+	     </style>
+	</head>
+	<body>
+		
+		<!-- Carousel sec -->
+	
+			<!-- success -->
+			<section class="success">
+				<div class="container">
+				<div class="row suc-mar">
+					<div class="col text-center">
+						<h3>OUR SUCCESS</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col text-center">
+						<div class="cir sub mx-auto">
+							<div class="small_cir">
+								<img src="img/sub.png">								
+							</div>	
+						</div>
+						<div class="counter-container">	     
+					      <div class="counter" data-target="10"></div>			      
+				    	</div>
+						<p>Subscriber</p>
+					</div>
+					<div class="col text-center">
+						<div class="cir like mx-auto">
+							<div class="small_cir">
+								<img src="img/like.png">							
+							</div>	
+						</div>
+						<div class="counter-container">	      
+					      <div class="counter" data-target="5"></div>			      
+					    </div>
+						<p>Likes</p>
+					</div>
+					<div class="col text-center">
+						<div class="cir view mx-auto">
+							<div class="small_cir">
+								<img src="img/view.png">							
+							</div>	
+						</div>
+						<div class="counter-container">	      
+					      <div class="counter" data-target="12"></div>			      
+					    </div>
+						<p>Views</p>
+					</div>
+				</div>
+				</div>
+			</section>
+
+			<script type="text/javascript">const counters = document.querySelectorAll(".counter");
+
+				counters.forEach((counter) => {
+				  counter.innerText = "0";
+				  const updateCounter = () => {
+				    const target = +counter.getAttribute("data-target");
+				    const count = +counter.innerText;
+				    const increment = target / 10;
+				    if (count < target) {
+				      counter.innerText = `${Math.ceil(count + increment)}`;
+				      setTimeout(updateCounter, 200);
+				    } else counter.innerText = target;
+				  };
+				  updateCounter();
+				});
+			</script>
+			
+	     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+	        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>
